@@ -1,4 +1,4 @@
-MetaEmployees is dedicated to learning more about the Meta Product, Design, Engineering, and Growth teams. 
+MetaEmployees is dedicated to learning more about the Meta Product, Design, Engineering, and Growth teams using SQL. 
 
 The MetaData CSV file (pun certainly intended) is a sample of data retrieved from LinkedIn of Meta employees.  
 The Meta Queries file contains SQL commands querying data to answer questions about the teams. 
