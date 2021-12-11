@@ -1,9 +1,0 @@
-# Where can I find local Meta employees in product,,,
-"SELECT name, job, location, profileUrl FROM meta-employees.meta_product_employees.employees WHERE location LIKE ""%Chicago%"" OR location LIKE ""%IL%"" LIMIT 10",,,
-,,,
-name,job,location,profileUrl
-Stephen Barros,Product Designer at Meta,Greater Chicago Area,https://www.linkedin.com/in/stephenbarros
-,,,
-# Who will I be supporting?,,,
-"SELECT name, job, location FROM `meta-employees.meta_product_employees.employees` WHERE job LIKE ""%Product%""",,,
-LIMIT 10;,,,
