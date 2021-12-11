@@ -5,3 +5,4 @@ The Meta Queries file contains SQL commands querying data to answer questions ab
 The Queries and Results file shows the SQL command along with the result, limited to 10 records for space purposes. 
 
 Hope you enjoy it! Let's chat on LI with your thoughts. 
+Linkedin.com/in/uroosa-shah
