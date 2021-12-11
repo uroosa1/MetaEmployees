@@ -1,0 +1,33 @@
+# Where can I find local Meta employees in product
+SELECT * FROM meta-employees.meta_product_employees.employees WHERE location LIKE "%Chicago%" OR location LIKE "%IL%";
+
+# Who might be my future team members?
+SELECT name, job FROM meta-employees.meta_product_employees.employees WHERE job LIKE "%Product Growth Analyst%";
+
+# Who will I be supporting? 
+SELECT name, job, location FROM `meta-employees.meta_product_employees.employees` WHERE job LIKE "%Product%";
+
+# What does each position mean?
+SELECT job,
+CASE 
+    WHEN job LIKE "%Product%" THEN "Works with the Product team"
+    WHEN job LIKE "%Data%" THEN "Works with the Data Science team"
+    WHEN job LIKE "%Growth%" THEN "Works with the Growth Marketing team" 
+    WHEN job LIKE "%Design%" THEN "Works with the Design team" 
+    ELSE "Works at Meta"
+END AS Description
+FROM `meta-employees.meta_product_employees.employees` 
+GROUP BY job;
+
+#How many Product Designers are in this sample size? 
+SELECT COUNT(*) AS ProductDesigners FROM meta-employees.meta_product_employees.employees WHERE job LIKE "%Product Designer%";
+
+#Can we clean our data and remove things that aren’t job titles?
+DELETE FROM meta-employees.meta_product_employees.employees 
+WHERE job NOT LIKE "%Product%"
+    and job NOT LIKE "%Design%"
+    and job NOT LIKE "%Growth%"
+    and job NOT LIKE "%Data%";
+
+#Let’s confirm it
+SELECT job FROM `meta-employees.meta_product_employees.employees`;
