@@ -1,11 +1,13 @@
 # Where can I find local Meta employees in product
-SELECT * FROM meta-employees.meta_product_employees.employees WHERE location LIKE "%Chicago%" OR location LIKE "%IL%";
+SELECT name, job, location, profileUrl FROM meta-employees.meta_product_employees.employees WHERE location LIKE "%Chicago%" OR location LIKE "%IL%" LIMIT 10;
 
 # Who might be my future team members?
-SELECT name, job FROM meta-employees.meta_product_employees.employees WHERE job LIKE "%Product Growth Analyst%";
+SELECT name, job FROM meta-employees.meta_product_employees.employees WHERE job LIKE "%Product Growth Analyst%" 
+LIMIT 10;
 
 # Who will I be supporting? 
-SELECT name, job, location FROM `meta-employees.meta_product_employees.employees` WHERE job LIKE "%Product%";
+SELECT name, job, location FROM `meta-employees.meta_product_employees.employees` WHERE job LIKE "%Product%" 
+LIMIT 10;
 
 # What does each position mean?
 SELECT job,
@@ -17,10 +19,12 @@ CASE
     ELSE "Works at Meta"
 END AS Description
 FROM `meta-employees.meta_product_employees.employees` 
-GROUP BY job;
+GROUP BY job
+LIMIT 10;
 
 #How many Product Designers are in this sample size? 
-SELECT COUNT(*) AS ProductDesigners FROM meta-employees.meta_product_employees.employees WHERE job LIKE "%Product Designer%";
+SELECT COUNT(*) AS ProductDesigners FROM meta-employees.meta_product_employees.employees WHERE job LIKE "%Product Designer%" 
+LIMIT 10;
 
 #Can we clean our data and remove things that aren’t job titles?
 DELETE FROM meta-employees.meta_product_employees.employees 
@@ -30,4 +34,5 @@ WHERE job NOT LIKE "%Product%"
     and job NOT LIKE "%Data%";
 
 #Let’s confirm it
-SELECT job FROM `meta-employees.meta_product_employees.employees`;
+SELECT job FROM `meta-employees.meta_product_employees.employees`
+LIMIT 10;
